@@ -1,0 +1,55 @@
+<div class="row">
+  <div  class="col-md-6 col-xs-12  col-md-offset-3">
+<h2>Rate our company</h2>
+<hr>
+<div class="stars">
+<div id="errors"></div>
+
+{{#if success_message}}
+<div class="alert alert-success alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> {{success_message}}
+</div>  
+{{/if}}
+
+{{user.name}}
+
+
+
+  <form action="/review/{{id}}" method="post">
+    <input type="hidden" id="id" value="{{id}}">
+
+ <div class="form-group">
+    <label for="text">Sending Company</label>
+    <input type="text" class="form-control" id="sender" name="sender" value="{{user.name}}">
+  </div>
+  <div class="form-group">
+    <label for="text">Recieving Company</label>
+    <input type="text" class="form-control" id="reciever" name="reciever" value="{{company.name}}">
+  </div>
+
+  <p class="p" id="clickedValue"></p>
+
+  <div class="form-group" id="star-rating">
+
+    <label for="text" >Rating</label>
+      <img src="/images/star_off.png" id="star-1"  name="star"  class="star" title="Bad" />
+      <img src="/images/star_off.png"  id="star-2"  name="star" class="star"  title="Poor" />
+      <img src="/images/star_off.png" id="star-3"  name="star"  class="star" title="Fair" />
+      <img src="/images/star_off.png"  id="star-4"  name="star" class="star"  title="Good" />
+      <img src="/images/star_off.png" id="star-5"  name="star"  class="star" title="Exellent" />  
+      <span id="showTitle"></span> 
+  </div>
+
+       
+
+  <div class="form-group">
+    <label for="text">Reviwe</label>
+    <textarea type="text" class="form-control" id="review"></textarea>
+  </div>
+
+<button type="submit" class="btn btn-primary"  id="rate">Submit</button>
+    </form>
+        
+    </div>
+</div>

@@ -1,0 +1,102 @@
+
+
+
+      <h1 >Company Profile</h1>
+      <hr>
+
+      <div class="row">
+
+
+        <div class="col-md-9 ">
+
+          <div class="card mt-4 text-center">
+            <img class="card-img-top img-fluid text-center" src="/uploads/{{company.file}}" style="width:50%; height: 50%">
+            <div class="card-body">
+              <h3 class="card-title">{{company.name}}</h3>
+              <hr class="text-center" style="width:50%">
+              <p class="card-text">{{company.body}}</p>
+                 <hr class="text-center" style="width:80%">
+                <ul class="list-inline">
+                {{#if user}}
+                <li><a href="/review/{{company._id}}" class="btn btn-warning">Rate This Company</a></li>
+                <li><a href="/company/employees/{{company._id}}" class="btn btn-primary">View Company Employees</a></li>
+                 <li><a href="/company/register-employee/{{company._id}}" class="btn btn-success">Register Me AsEmployees</a></li>
+                   
+                {{else}}
+                <li><a href="/company/register-employee/{{company._id}}" class="btn btn-success">Register Me AsEmployees</a></li>
+                <br>
+                <br>
+                <p>Register as employee to can rate this company</p>
+                {{/if}}
+
+              </ul>       
+            </div>
+          </div>
+         <br>
+         <br>
+
+         <div class="row">
+           <div class="col-md-10 " >
+             <div class="col-md-5  pull-left">
+               <h4>Reviwes</h4>
+               <hr>
+             </div>
+           </div>
+         </div>
+          {{#each company.companyRating}}
+          <div class="review box">
+            <div class="row">
+              <div class="col-md-12 col-sm-12">
+                <div class="col-md-8 col-sm-4  pull-left" >
+                  <img src="/uploads/{{userImage}}" class="pull-left img-circle" style="width:100px;height:100px;">
+                  <div class="pull-left" style="margin-left: 6%;">
+                    <b>User name:<</b>{{userName}}
+                    <br>
+                    <br>
+                    <b>Reviwe:<span class="userReview">{{userReview}}</span></b>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-2  pull-right">
+                   <div class="pull-right">
+                    <p>Rating</p>
+                   <span class="star" data-score="{{userRating}}"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+         {{/each}}
+
+
+
+
+        </div>
+        <!-- /.col-lg-9 -->
+        <div class="col-md-3 col-sm-12">
+          <div class="col-md-12 box1 text-center">
+            <i class="fas fa-american-sign-language-interpreting fa-lg"></i>
+            <h3 class="blue">{{company.ratingNumber.length}}</h3>
+            <b>Rating</b>
+            <p>Total rating recieved</p>
+          </div>
+          <div class="col-md-12 box1 text-center">
+            <i class="fas fa-star"></i>
+            <h3 class="blue">{{company.ratingSum}}</h3>
+            <b>Total stars</b>
+            <p>Total stars recieved</p>
+          </div>
+          <div class="col-md-12 box1 text-center">
+              <b >Average rating<span class="blue">({{avg}})</span></b>   
+              <p>Based on 5 reviews</p>
+              <span class="star" data-score="{{avg}}"></span>
+                 <br>
+           
+          </div>
+        </div><!-- /.col-md-3 -->
+
+      </div>
+
+    
+
+    

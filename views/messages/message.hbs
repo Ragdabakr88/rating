@@ -1,0 +1,57 @@
+
+
+
+<div id="wrapper">
+    <div id="page-content-wrapper">
+
+            <div class="bodyDiv">
+				<h4 style="">Send Message</h4>
+
+				<input type="hidden" name="receiverId" id="receiverId" class="form-control" value="{{data._id}}"><br>
+
+				<div class="msg">
+
+					<div class="">
+					    <div class="">
+					        <ul class="chat">
+					        {{#each chats}}
+								<li class="left clearfix"><span class="chat-img pull-left">
+									<img src="/images/star-on.png" alt="User Avatar" class="img-circle">
+								</span>
+									<div class="chat-body clearfix">
+										<div class="header">
+											<strong class="primary-font">{{userFromName}}</strong>
+											<small class="pull-right ">
+												<span class="">{{GenerateTime createdAt 'MMMM Do YYYY'}}</span>
+											</small>
+										</div>
+										<p>
+											{{body}}
+										</p>
+									</div>
+								</li>
+                         {{/each}}
+                            
+					        </ul>
+					    </div>
+					</div>
+
+				</div><br>
+
+				<div class="form-group ">
+				<br>
+					<textarea id="msg" name="message" class="form-control" placeholder="  Enter message" rows="5" cols="60"></textarea>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" id="sendmessage" value="Send Message" class="form-control btn btn-primary" name="send">
+				</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/js/moment.js"></script>
+

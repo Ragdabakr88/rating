@@ -1,0 +1,32 @@
+
+
+{{#each companies}}
+  
+
+<div class="row">
+  <div class="col-md-8  col-md-offset-2  col-sm-12 col-xs-12 ">
+<ul class="media-list   box">
+  <li class="media">
+    <div class="media-left">
+<input type="hidden" id="companyId" value="{{comapny.id}}">
+      <a href="/company/{{id}}">
+        <img class="e" src="/uploads/{{file}}" style="width:100px; height: 80px"  >
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{name}}</h4>
+      <p>{{website}}</p>
+      
+      <i class="fa fa-map-marker"> {{address}} </i>
+      ({{ratingNumber.length}})
+
+      <div class="pull-right">
+       <a href="/company/{{id}}" class="btn btn-primary">Go to company</a>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+</div>
+
+{{/each}}

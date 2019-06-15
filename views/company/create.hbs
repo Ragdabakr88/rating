@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-md-12  col-sm-12 col-xs-12    col-md-offset-2">
+<hr>
+
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Error!</strong> {{message}}
+</div>  
+{{/each}}
+
+<div class="signup-form" >
+
+<form  action="/company/create" method="post"  enctype="multipart/form-data" >
+     
+    <h3>Create your company</h3>
+    <hr>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="title">Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control"  placeholder="Enter company name" name="name">
+    </div>
+  </div>
+  <br><br><br>
+
+   <div class="form-group">
+    <label class="control-label col-sm-2" for="title">Address:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control"  placeholder="address" name="address">
+    </div>
+  </div>
+    <br><br>
+
+   <div class="form-group">
+    <label class="control-label col-sm-2" for="title">Website:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control"  placeholder="http://companyname.com" name="website">
+    </div>
+  </div>
+    <br><br>
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="file">Upload Photo:</label>
+    <div class="col-sm-10">
+      <input type="file" class="form-control"  name="file" >
+    </div>
+  </div>
+    <br><br>
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="body">Body:</label>
+    <div class="col-sm-10">
+      <textarea id="editor" type="text" class="form-control" cols="30" rows="5"   placeholder="Enter Description" name="body" style="padding:2%"></textarea>
+    </div>
+  </div>
+  <br><br>
+  <br>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10" style="margin-top: 10%;" >
+      <button type="submit" class="btn btn-primary">Create Company</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+
+	
